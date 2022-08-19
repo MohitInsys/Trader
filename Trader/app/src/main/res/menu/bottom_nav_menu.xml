@@ -7,12 +7,12 @@
         android:title="@string/title_crypto" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_discover"
         android:icon="@drawable/ic_baseline_discover"
         android:title="@string/title_discover" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_profile"
         android:icon="@drawable/ic_baseline_person_24"
         android:title="@string/title_profile" />
 

@@ -18,5 +18,9 @@ class SignupActivity : AppCompatActivity() {
             overridePendingTransition(com.google.android.material.R.anim.abc_slide_in_top,
                 com.google.android.material.R.anim.abc_slide_out_bottom)
         }
+        binding.ButtonForSignupButton.setOnClickListener{
+            val intent=Intent(this,StartPageActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
