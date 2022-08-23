@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navgraph_cryptofragment"
+        android:icon="@drawable/ic_baseline_crypto"
+        android:title="@string/title_crypto" />
+
+    <item
+        android:id="@+id/navgraph_discoverfragment"
+        android:icon="@drawable/ic_baseline_discover"
+        android:title="@string/title_discover" />
+
+    <item
+        android:id="@+id/navgraph_profilefragment"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="@string/title_profile" />
+
+</menu>

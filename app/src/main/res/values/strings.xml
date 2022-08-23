@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Trader</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_crypto">Crypto</string>
+    <string name="title_discover">Discover</string>
+    <string name="title_profile">Profile</string>
+
+</resources>
