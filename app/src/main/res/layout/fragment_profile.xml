@@ -22,9 +22,10 @@
             app:layout_constraintTop_toTopOf="parent" />
 
              <com.google.android.material.button.MaterialButton
+                 android:id="@+id/buttonforlogout"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginRight="10dp"
             android:text="Log Out"
             android:layout_marginTop="10dp"
             android:textColor="@color/black"
@@ -73,7 +74,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardviewforloggedinprofilename"
                     android:layout_width="0dp"
-                    android:layout_height="24dp"
+                    android:layout_height="35dp"
                     app:cardCornerRadius="9dp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     android:background="@color/white"
@@ -81,17 +82,23 @@
                     android:layout_marginLeft="@dimen/margin_10dp"
                     android:layout_marginRight="@dimen/margin_10dp"
                     android:layout_marginTop="55dp"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent" >
 
                 <TextView
+                    android:id="@+id/textforcurrentloggedinname"
+                    android:layout_marginLeft="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
+                    android:gravity="center_vertical"
 
                     />
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="24dp"
+                    android:layout_height="35dp"
                     app:cardCornerRadius="9dp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     android:background="@color/white"
@@ -102,12 +109,17 @@
                     app:layout_constraintTop_toBottomOf="@id/cardviewforloggedinprofilename">
 
                     <TextView
+                        android:id="@+id/textforcurrentloggedinemail"
+                        android:gravity="center_vertical"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="5dp"
                         android:layout_height="match_parent"
                         android:layout_width="match_parent" />
 
                 </androidx.cardview.widget.CardView>
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonforupdate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/yellowish"
@@ -121,24 +133,32 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
+
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginTop="15dp"
             android:background="@color/yellowish"
             android:text="All Profiles"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:gravity="center"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardviewofloggedinprofile" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="50dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardviewofloggedinprofile" />
+
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

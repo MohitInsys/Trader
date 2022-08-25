@@ -4,6 +4,7 @@
     package="com.example.trader">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +17,9 @@
         android:theme="@style/Theme.Trader"
         tools:targetApi="31">
         <activity
+            android:name=".UpdateActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.CrytpoDetails"
             android:exported="false" />
         <activity
@@ -27,6 +31,8 @@
         <activity
             android:name=".Activities.SignupActivity"
             android:exported="false" />
+        <activity android:name=".Activities.UpdateActivity"
+            android:exported="false"/>
         <activity
             android:name=".Activities.SplashScreenActivity"
             android:exported="true"

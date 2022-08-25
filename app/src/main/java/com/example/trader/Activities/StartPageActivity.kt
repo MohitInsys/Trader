@@ -19,7 +19,7 @@ class StartPageActivity : AppCompatActivity() {
         binding.buttonforgetstarted.setOnClickListener(){
             val intent= Intent(this,HomeActivity::class.java)
             startActivity(intent)
-
+            finish()
 
         }
     }

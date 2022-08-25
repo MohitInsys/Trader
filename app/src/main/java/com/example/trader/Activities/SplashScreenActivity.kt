@@ -1,9 +1,12 @@
 package com.example.trader.Activities
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.widget.Toast
 import com.example.trader.database.UserDataBase
 import com.example.trader.databinding.ActivitySplashScreenBinding
 import kotlinx.coroutines.GlobalScope
@@ -16,10 +19,22 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        UserDataBase.get(application)
+       /* UserDataBase.get(application)*/
+        val sharedPreferences:SharedPreferences=getSharedPreferences("Data", Context.MODE_PRIVATE)
+        val type:String= sharedPreferences.getString("Email","").toString()
+
+
         var i= Intent(this,LoginActivity::class.java)
         Handler().postDelayed({
-            startActivity(i)
+
+            if(type.isEmpty())
+            {
+                startActivity(Intent(this,LoginActivity::class.java))
+            }
+            else{
+                startActivity(Intent(this,HomeActivity::class.java))
+            }
+
             finish()
         }, 3000)
     }

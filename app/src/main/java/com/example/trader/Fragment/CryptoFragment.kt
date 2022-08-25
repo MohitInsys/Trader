@@ -3,11 +3,10 @@ package com.example.trader.Fragment
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextWatcher
 import android.text.method.TextKeyListener.clear
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ListView
 import android.widget.SearchView
 import androidx.core.view.contains
@@ -22,6 +21,10 @@ import com.example.trader.Viewmodel.CryptoViewModel
 
 import com.example.trader.databinding.FragmentCryptoBinding
 import com.example.trader.retrofit.ApiData
+import com.example.trader.retrofit.ApiServices
+import com.example.trader.retrofit.RetroInstance
+import retrofit2.Response
+import retrofit2.Retrofit
 import java.util.*
 
 
@@ -40,7 +43,6 @@ class CryptoFragment : Fragment() {
         cryptoViewModel= ViewModelProvider(this)[CryptoViewModel::class.java]
 
 
-
         cryptoViewModel!!.LiveData.observe(this)
         {
             Log.e("MainActivity", "CryptoList" + it.get(0).symbol)
@@ -50,25 +52,7 @@ class CryptoFragment : Fragment() {
                 adapter1.notifyDataSetChanged()
                 binding.recyclerview.adapter = adapter1
 
-             /*   searchView.setOnQueryTextListener(object :SearchView.OnQueryTextListener{
-                    override fun onQueryTextSubmit(newString: String?): Boolean {
-                        binding.cardviewofsearch.clearFocus()
-                        if(binding.recyclerview.contains(newString))
-                            adapter1..filter(newString)
-                    }
 
-                    override fun onQueryTextChange(newText: String?): Boolean {
-                        ListView()
-                        val searchText=newText!!.toLowerCase(Locale.getDefault())
-                        if(searchText.isNotEmpty()){
-
-                        }
-                        return false
-                    }
-
-                })
-
-            }*/
             adapter1.setOnItemClickListener(object : CryptoAdapter.Onclickinter {
                 override fun onClick(position: Int) {
                     lastItemClickedPosition = position
@@ -78,12 +62,17 @@ class CryptoFragment : Fragment() {
                     startActivity(intent)
 
                 }
+                private suspend fun getList(){
 
+                }
                 override fun onLongclick(position: Int) {
                     TODO("Not yet implemented")
                 }
-            })}}}
-    override fun onCreateView(
+            })
+            }
+        }
+    }
+override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {

@@ -16,6 +16,7 @@ class CryptoViewModel :ViewModel() {
     val getList by lazy {
         MutableLiveData<List<ApiData>>()
     }
+    var filterList= mutableListOf<ApiData>()
     var Listview = mutableListOf<ApiData>()
     val LiveData = getList as LiveData<List<ApiData>>
 

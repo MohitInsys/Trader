@@ -13,9 +13,19 @@
 
     <style name="SplashScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/grey</item>
-        <item name="colorPrimaryDark">@color/green</item>
+        <item name="colorPrimaryDark">@color/white</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/teal_200</item>
 
     </style>
+    <style name="Bottomsheet" parent="Theme.MaterialComponents.DayNight.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/modal</item>
+    </style>
+    <style name="modal"
+
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="background"/>
+
+    </style>
+
 </resources>

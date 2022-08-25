@@ -13,6 +13,7 @@ import com.example.trader.Viewmodel.DiscoverViewModel
 import com.example.trader.Viewmodel.DiscoverViewModelaFactory
 
 import com.example.trader.databinding.FragmentDiscoverBinding
+import com.example.trader.retrofitForDiscover.DiscoverApiService
 
 
 import com.example.trader.retrofitForDiscover.DiscoverMainRepository
@@ -25,31 +26,16 @@ class DiscoverFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding=FragmentDiscoverBinding.inflate(layoutInflater)
+        binding = FragmentDiscoverBinding.inflate(layoutInflater)
 
-        val repo=DiscoverMainRepository()
+        val repo = DiscoverMainRepository()
+
+        val findText = binding.editviewforsearch.text.toString()
+        val name=binding.editviewforsearch.text
+        DiscoverApiService.geti
 
 
-
-        discoverViewModel=ViewModelProvider(this)[DiscoverViewModel::class.java]
-        viewModelaFactory=DiscoverViewModelaFactory(repo)
-        discoverViewModel?.myResponse?.value
-        discoverViewModel?.myResponse?.observe(this, Observer {response->
-            if(response.isSuccessful){
-            Log.d("Response",response.body()?.name.toString())
-            Log.d("Response",response.body()?.gender.toString())
-            Log.d("Response",response.body()?.count.toString())
-            Log.d("Response",response.body()?.probability.toString())
-                binding.textviewforname.text=response.body()?.name.toString()
-                binding.textviewforgender.text=response.body()?.gender.toString()
-                binding.textviewforcount.text=response.body()?.count.toString()
-                binding.textviewforprobability.text=response.body()?.probability.toString()
-            }
-            else
-                Log.d("Response",response.errorBody().toString())
-        })
-            }
-
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

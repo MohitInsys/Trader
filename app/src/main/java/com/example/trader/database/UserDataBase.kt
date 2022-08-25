@@ -7,22 +7,26 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities=[User::class],version=1, exportSchema=false)
+@Database(entities=[User::class],version=2, exportSchema = false)
 abstract class UserDataBase: RoomDatabase() {
-    abstract fun userdao():UserDao?
+    abstract fun userdao():UserDao
    companion object{
+       @Volatile
         private var INSTANCE:UserDataBase?=null
 
-       fun getappdatabase(context: Context):RoomDatabase{
-
-        if(INSTANCE==null){
-            INSTANCE=Room.databaseBuilder<UserDataBase>(
-                context.applicationContext,UserDataBase::class.java,"appdatabase"
-            )
-                .allowMainThreadQueries()
+       fun getappdatabase(context: Context?): UserDataBase? {
+        val temp= INSTANCE
+        if(temp==null){
+            synchronized(this){
+            val instance=Room.databaseBuilder(
+                context!!.applicationContext,UserDataBase::class.java,"appdatabase"
+            )   .fallbackToDestructiveMigration()
                 .build()
+            INSTANCE=instance
+                return instance
+            }
         }
-           return INSTANCE as UserDataBase
+           return temp
         }
    }
 

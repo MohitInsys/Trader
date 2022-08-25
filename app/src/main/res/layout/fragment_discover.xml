@@ -24,6 +24,7 @@
             android:layout_margin="@dimen/margin_10dp">
 
       <EditText
+          android:id="@+id/editviewforsearch"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:background="@color/white"
@@ -34,7 +35,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="300dp"
             android:layout_height="260dp"
-            android:backgroundTint="@color/light"
+            android:backgroundTint="@color/yellowish"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardviewforsearch"

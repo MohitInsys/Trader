@@ -1,24 +1,41 @@
-package com.example.trader.database/*
+
 package com.example.trader.database
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import androidx.lifecycle.MutableLiveData
 
-class UserViewModel(application: Application):AndroidViewModel(application){
-    private val readAll:LiveData<List<User>>
-    private val userRepo:UserRepo
+class UserViewModel(app :Application) : AndroidViewModel(app) {
+    lateinit var allUser: MutableLiveData<List<User>?>
     init {
-        val userDao=UserDataBase.getDatabase(application)
-        userRepo= UserRepo(userDao)
-        readAll=userRepo.readALLData
+            allUser= MutableLiveData( )
     }
-    fun addUser(user: User){
-        viewModelScope.launch (Dispatchers.IO){
-            userRepo.addUser(user)
-        }
+    fun getAllUserObserver(): MutableLiveData<List<User>?>
+    {
+        return allUser
     }
-}*/
+   suspend fun getAllUser(){
+       val userDao = UserDataBase.getappdatabase((getApplication()))?.userdao()
+        val list=userDao?.getAll()
+        allUser.postValue(list)
+    }
+    suspend fun insertUserInfo(user: User){
+       val userdao= UserDataBase.getappdatabase(getApplication())?.userdao()
+        userdao?.insertUser(user)
+        getAllUser()
+    }
+   suspend fun deleteUserInfo(user: User){
+        val userdao= UserDataBase.getappdatabase(getApplication())?.userdao()
+        userdao?.deleteUser(user)
+        getAllUser()
+    }
+   suspend fun updateUserInfo(user: User){
+        val userdao= UserDataBase.getappdatabase(getApplication())?.userdao()
+        userdao?.updateUser(String.toString(), String.toString())
+        getAllUser()
+    }
+
+
+
+
+}

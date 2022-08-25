@@ -6,13 +6,19 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 object DiscoverRetroInstance {
-    private val retrofit by lazy{
-        Retrofit.Builder()
-            .baseUrl(baseurl)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+    private var retrofit:Retrofit?=null
+    val base_url="https://api.genderize.io/"
+
+    fun getRetroInstance(baseUrl :String):Retrofit{
+
+        if(retrofit==null) {
+
+            retrofit=Retrofit.Builder()
+                .baseUrl(base_url)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+        }
+        return retrofit!!
+
     }
-    val api:DiscoverApiService by lazy {
-        retrofit.create(DiscoverApiService::class.java)
-    }
-    }
+}

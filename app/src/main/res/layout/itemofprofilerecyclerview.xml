@@ -9,57 +9,56 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="55dp"
-            app:cardBackgroundColor="@color/light"
-            android:layout_margin="@dimen/margin_10dp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            app:cardBackgroundColor="@color/yellowish"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="10dp"
+            android:elevation="15dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            tools:ignore="MissingConstraints">
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardviewforstoreprofilename"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_margin="5dp"
-                    app:cardCornerRadius="9dp"
-                    android:backgroundTint="@color/yellowish"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/textviewforname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toTopOf="@id/textviewforEmail"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </androidx.cardview.widget.CardView>
+                        android:id="@+id/textviewforEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:backgroundTint="@color/yellowish"
+                        app:layout_constraintTop_toBottomOf="@id/textviewforname"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardviewforstoreprofileemail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_margin="5dp"
-                    app:cardCornerRadius="9dp"
-                    android:backgroundTint="@color/yellowish"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.cardview.widget.CardView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </layout>

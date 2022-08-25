@@ -12,7 +12,7 @@ class MainRepository {
     init { apiServices= Common.getApiService
     }
     var cryptoLiveData= MutableLiveData<MutableList<ApiData>>()
-    var newLiveData=cryptoLiveData as LiveData<List<ApiData>>
+
 
     suspend fun getCryptoList():List<ApiData>? {
 
