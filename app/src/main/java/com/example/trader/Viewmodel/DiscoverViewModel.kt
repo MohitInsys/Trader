@@ -11,21 +11,24 @@ import kotlinx.coroutines.launch
 import retrofit2.Response
 
 
-class DiscoverViewModel(private val repository: DiscoverMainRepository,name:String) : ViewModel() {
+class DiscoverViewModel() : ViewModel() {
    val mainRepository by lazy{
         DiscoverMainRepository()
     }
     val getList by lazy {
-        MutableLiveData<List<DiscoverApiData>>()
+        MutableLiveData<DiscoverApiData>()
     }
     var name:MutableLiveData<String>?=null
+    val newLiveData=getList as LiveData<DiscoverApiData>                                //updating newdata to our view
 
-    init {
+    fun searchDeatils(query:String){
+
         viewModelScope.launch {
 
 
-            val details=mainRepository.getList()
+            var details=mainRepository.getList(query)                                   //fetching response from API
             getList.value=details
+
         }
 
     }

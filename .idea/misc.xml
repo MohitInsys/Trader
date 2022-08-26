@@ -17,14 +17,15 @@
         <entry key="app/src/main/res/layout/bottom_sheet.xml" value="0.3359375" />
         <entry key="app/src/main/res/layout/bottomsheet.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.33697916666666666" />
-        <entry key="app/src/main/res/layout/fragment_crypto.xml" value="0.3606789250353607" />
-        <entry key="app/src/main/res/layout/fragment_discover.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_crypto.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_discover.xml" value="0.14" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/itemofcryptorecyclerview.xml" value="0.1" />
         <entry key="app/src/main/res/layout/itemofprofilerecyclerview.xml" value="0.3958602846054334" />
         <entry key="app/src/main/res/layout/updateprofile.xml" value="0.40260416666666665" />
-        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/menu.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.337" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_appicon.xml" value="0.106" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_appicon_round.xml" value="0.106" />

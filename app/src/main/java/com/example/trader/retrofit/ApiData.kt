@@ -23,7 +23,8 @@ val openTime :Long,
 val closeTime : Long,
 val firstId : Long,
 val lastId : Long,
-val count : Long):Serializable
+val count : Long
+):Serializable
 
 
 

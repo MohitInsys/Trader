@@ -4,7 +4,9 @@
     <item
         android:id="@+id/navgraph_cryptofragment"
         android:icon="@drawable/ic_baseline_crypto"
-        android:title="@string/title_crypto" />
+        android:title="@string/title_crypto"
+        
+        />
 
     <item
         android:id="@+id/navgraph_discoverfragment"

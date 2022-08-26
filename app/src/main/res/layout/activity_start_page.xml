@@ -47,7 +47,7 @@
             android:id="@+id/textviewofstarted"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="@dimen/margin_70dp"
             android:textSize="36sp"
             android:fontFamily="@font/bulgatti"
             android:text="Joshua Williams"
@@ -85,7 +85,7 @@
             android:backgroundTint="@color/yellowish"
             android:text="Get Started"
             android:textColor="@color/black"
-            app:cornerRadius="7dp"
+            app:cornerRadius="@dimen/cornerRadius_7dp"
             android:gravity="center"
             app:layout_constraintTop_toBottomOf="@id/imageviewoftruckinstarted" />
 

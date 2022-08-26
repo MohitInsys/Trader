@@ -10,7 +10,7 @@ import retrofit2.http.Headers
 interface ApiServices  {
     @Headers("Content-Type: application/json")
     @GET("/api/v3/ticker/24hr")
-    suspend fun getApiServices(): Response<List<ApiData>>
+    suspend fun getApiServices(): Response<MutableList<ApiData>>
 
 
 }

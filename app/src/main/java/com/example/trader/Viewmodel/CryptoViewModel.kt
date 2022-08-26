@@ -16,16 +16,16 @@ class CryptoViewModel :ViewModel() {
     val getList by lazy {
         MutableLiveData<List<ApiData>>()
     }
-    var filterList= mutableListOf<ApiData>()
+
     var Listview = mutableListOf<ApiData>()
     val LiveData = getList as LiveData<List<ApiData>>
 
-    /*val data=mainRepository.getpost()*/
+
     init {
         viewModelScope.launch {
 
 
-            var cryptoList = mainRepository.getCryptoList()
+            var cryptoList = mainRepository.getCryptoList()                     //fetching data from api in form of list
             getList.value =cryptoList
         }
 

@@ -3,7 +3,7 @@ package com.example.trader.database
 
 import androidx.room.*
 @Dao
-interface UserDao{
+interface UserDao{                                                                            //all queries to perform on database
 
     @Query("SELECT * FROM user_details ORDER BY id DESC ")
     fun getAll():List<User>
@@ -16,6 +16,8 @@ interface UserDao{
 
     @Query("SELECT name FROM User_details WHERE email==:email2")
     fun findmyname(email2: String):String
+    @Query("SELECT id FROM User_details WHERE email==:email1")
+    fun findmyid(email1: String):Int
 
     @Delete
     fun deleteUser(user: User?)

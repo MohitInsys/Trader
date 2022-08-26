@@ -3,5 +3,22 @@
     <dimen name="margin_75dp">75dp</dimen>
     <dimen name="margin_25dp">25dp</dimen>
     <dimen name="margin_10dp">10dp</dimen>
+    <dimen name="margin_20dp">20dp</dimen>
+    <dimen name="margin_5dp">5dp</dimen>
+    <dimen name="margin_100dp">100dp</dimen>
+    <dimen name="margin_18dp">18dp</dimen>
+    <dimen name="margin_54dp">54dp</dimen>
+    <dimen name="margin_62dp">62dp</dimen>
+    <dimen name="margin_70dp">70dp</dimen>
+    <dimen name="margin_30dp">30dp</dimen>
+    <dimen name="margin_15dp">15dp</dimen>
+
+
+    <dimen name="cornerRadius_6dp">6dp</dimen>
+    <dimen name="cornerRadius_10dp">10dp</dimen>
+    <dimen name="cornerRadius_20dp">20dp</dimen>
+    <dimen name="cornerRadius_15dp">15dp</dimen>
+    <dimen name="cornerRadius_7dp">7dp</dimen>
+    <dimen name="cornerRadius_9dp">9dp</dimen>
 
 </resources>

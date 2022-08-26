@@ -4,6 +4,7 @@ package com.example.trader.retrofitForDiscover
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import retrofit2.Response
 
 
 class DiscoverMainRepository {
@@ -15,9 +16,9 @@ class DiscoverMainRepository {
         apiServices=DiscoverCommon.getApiService
     }
     var getLiveData= MutableLiveData<MutableList<DiscoverApiData>>()
-    var newLiveData=getLiveData as LiveData<List<DiscoverApiData>>
 
-    suspend fun getList(name:String): DiscoverApiData? {
+
+    suspend fun getList(name:String): DiscoverApiData?{
 
         try {
             var result = apiServices.getGender(name)

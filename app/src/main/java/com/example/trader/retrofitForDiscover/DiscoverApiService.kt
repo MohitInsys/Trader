@@ -5,7 +5,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface DiscoverApiService{
-    @GET( )
-    suspend fun getGender(@Query("name") name : String) :Call<DiscoverApiData>
+    @GET("." )
+    suspend fun getGender(@Query("name") name : String="") :Response<DiscoverApiData>
 
 }

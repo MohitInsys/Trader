@@ -15,6 +15,6 @@ class CrytpoDetails : AppCompatActivity() {
         binding=ActivityCrytpoDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         var i=intent.getSerializableExtra("model") as ApiData
-        binding.setVariable(BR.crypto_details2,i)
+        binding.setVariable(BR.crypto_details2,i)                                                   //sending data to our xml
     }
 }

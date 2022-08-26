@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+<variable
+    name="details"
+    type="com.example.trader.retrofitForDiscover.DiscoverApiData" />
 
     </data>
 
@@ -15,13 +18,15 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardviewforsearch"
+            android:layout_marginTop="35dp"
             android:layout_width="0dp"
             android:layout_height="30dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:cardCornerRadius="9dp"
-            android:layout_margin="@dimen/margin_10dp">
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:layout_marginRight="@dimen/margin_10dp">
 
       <EditText
           android:id="@+id/editviewforsearch"
@@ -35,6 +40,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="300dp"
             android:layout_height="260dp"
+
             android:backgroundTint="@color/yellowish"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -47,37 +53,98 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <TextView
-                    android:id="@+id/textviewforname"
+                    android:id="@+id/textviewfornameTag"
                     android:layout_width="0dp"
+                    android:text="NAME : "
+                    android:textSize="20dp"
+                    android:gravity="right"
                     android:layout_height="wrap_content"
                     app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/textviewforname"
+                    app:layout_constraintBottom_toTopOf="@id/textviewforgender"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <TextView
+                    android:id="@+id/textviewforname"
+                    android:layout_width="0dp"
+                    android:text="@{details.name}"
+                    android:textSize="20dp"
+                    android:gravity="left"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toRightOf="@id/textviewfornameTag"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintBottom_toTopOf="@id/textviewforgender"
                     app:layout_constraintTop_toTopOf="parent"
                     />
                 <TextView
+                    android:id="@+id/textviewforgenderTag"
+                    android:layout_width="0dp"
+                    android:text="GENDER : "
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:gravity="right"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/textviewforgender"
+                    app:layout_constraintBottom_toTopOf="@id/textviewforprobability"
+                    app:layout_constraintTop_toBottomOf="@id/textviewforname"
+                    />
+                <TextView
                     android:id="@+id/textviewforgender"
                     android:layout_width="0dp"
+                    android:text='@{details.gender!= null ? details.gender : ""}'
                     android:layout_height="wrap_content"
-                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:textSize="20dp"
+                    android:gravity="left"
+
+                    app:layout_constraintLeft_toRightOf="@id/textviewforgenderTag"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintBottom_toTopOf="@id/textviewforprobability"
                     app:layout_constraintTop_toBottomOf="@id/textviewforname"
                    />
                 <TextView
-                android:id="@+id/textviewforprobability"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textviewforgender"
+                    android:id="@+id/textviewforprobabilityTag"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="PROBABILITY : "
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:textSize="20dp"
+                    android:gravity="right"
+                    app:layout_constraintRight_toLeftOf="@id/textviewforprobability"
+                    app:layout_constraintTop_toBottomOf="@id/textviewforgender"
                     app:layout_constraintBottom_toTopOf="@id/textviewforcount"
+                    />
+                    <TextView
+                    android:id="@+id/textviewforprobability"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                        android:text="@{String.valueOf(details.probability)}"
+                    app:layout_constraintLeft_toRightOf="@id/textviewforprobabilityTag"
+                        android:textSize="20dp"
+                        android:gravity="left"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textviewforgender"
+                        app:layout_constraintBottom_toTopOf="@id/textviewforcount"
+                        />
+
+                <TextView
+                    android:id="@+id/textviewforcountTag"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="COUNT : "
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:textSize="20dp"
+                    android:gravity="right"
+                    app:layout_constraintRight_toLeftOf="@id/textviewforcount"
+                    app:layout_constraintTop_toBottomOf="@id/textviewforprobability"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     />
                 <TextView
                     android:id="@+id/textviewforcount"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:text="@{String.valueOf(details.count)}"
+                    app:layout_constraintLeft_toRightOf="@id/textviewforcountTag"
+                    android:textSize="20dp"
+                    android:gravity="left"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/textviewforprobability"
                     app:layout_constraintBottom_toBottomOf="parent"

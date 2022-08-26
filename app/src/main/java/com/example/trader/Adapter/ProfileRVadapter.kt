@@ -19,7 +19,7 @@ class ProfileRVadapter(val context:ProfileFragment): RecyclerView.Adapter<Profil
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val binding = DataBindingUtil.inflate<ItemofprofilerecyclerviewBinding>(
+                val binding = DataBindingUtil.inflate<ItemofprofilerecyclerviewBinding>(
             LayoutInflater.from(parent.getContext()), R.layout.itemofprofilerecyclerview, parent, false)
         return MyViewHolder(binding)
      }
@@ -34,20 +34,10 @@ class ProfileRVadapter(val context:ProfileFragment): RecyclerView.Adapter<Profil
     class MyViewHolder(var binding: ItemofprofilerecyclerviewBinding):RecyclerView.ViewHolder(binding.root) {
             fun bind(data:User){
                 binding.textviewforname.text=data.name
-            binding.textviewforEmail.text=data.email
+                binding.textviewforEmail.text=data.email
             }
     }
     fun getDataList():ArrayList<User>{
-
-
         return item
-
-
     }
-   /* fun updateData(viewModels: ArrayList<ViewModel?>?) {
-        item.clear()
-        item.addAll(item)
-        notifyDataSetChanged()
-    }*/
-
 }

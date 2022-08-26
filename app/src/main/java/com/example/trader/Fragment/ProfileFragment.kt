@@ -81,26 +81,32 @@ class ProfileFragment : Fragment() {
 
         }
         }
-    var updateActivity_launcher =registerForActivityResult(ActivityResultContracts.StartActivityForResult())
+    var updateActivity_launcher =registerForActivityResult(ActivityResultContracts.StartActivityForResult())            //taking result from update activity
     { result ->
         val sharedPreferences: SharedPreferences =
             requireActivity().getSharedPreferences("Data", Context.MODE_PRIVATE)
         val loggedEmail = sharedPreferences.getString("Email", Context.MODE_PRIVATE.toString())
+
         if (result.resultCode == AppCompatActivity.RESULT_OK) {
-            val new_Name:String=result.data?.getStringExtra("new_name").toString()
-            val adapter=binding.recyclerview.adapter as ProfileRVadapter
-            val itemList=adapter.getDataList()
-            itemList[2].name=new_Name
+            val new_Name: String = result.data?.getStringExtra("new_name").toString()
 
-            adapter.notifyDataSetChanged()
-
-            lifecycleScope.launch(Dispatchers.IO){
-                dataBase.userdao().updateUser(new_Name,loggedEmail .toString())
-                binding.textforcurrentloggedinname.setText(new_Name)
-
+            val adapter = binding.recyclerview.adapter as ProfileRVadapter
+            val itemList = adapter.getDataList()
+            for(item in itemList)                                                                                       //comparing email with name in our list
+            {
+                if(item.email==loggedEmail){
+                    item.name=new_Name
+                    adapter.notifyDataSetChanged()                                                                      //updating recyclerview
+                    break
+                }
             }
 
 
+            lifecycleScope.launch(Dispatchers.IO){
+                dataBase.userdao().updateUser(new_Name,loggedEmail .toString())                                         //running a query to update user in database
+
+                binding.textforcurrentloggedinname.setText(new_Name)
+            }
         }
     }
  override fun onCreateView(

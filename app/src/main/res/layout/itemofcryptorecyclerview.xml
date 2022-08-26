@@ -59,6 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="start"
+                    android:textColor="@color/red"
                     android:textSize="15sp"
                     android:text="@{crypto_details.priceChangePercent}"
                     app:layout_constraintLeft_toRightOf="@id/textviewforaskpriceofcrypto"
